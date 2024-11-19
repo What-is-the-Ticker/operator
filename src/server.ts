@@ -36,16 +36,16 @@ app.post("/task", async (req, res) => {
 
 
 app.listen(port, () => {
-  // registerOperator()
-  // .then(() => {
-  //   monitorNewTasks().catch((error) => {
-  //       console.error("Error monitoring tasks:", error);
-  //   });
-  // })
-  // .catch((error) => {
-  //   console.error("Error registering operator:", error);
-  //   monitorNewTasks().catch((error) => {
-  //     console.error("Error monitoring tasks:", error);
-  //   });
-  // });
+  registerOperator()
+  .then(() => {
+    monitorNewTasks().catch((error) => {
+        console.error("Error monitoring tasks:", error);
+    });
+  })
+  .catch((error) => {
+    console.error("Error registering operator:", error);
+    monitorNewTasks().catch((error) => {
+      console.error("Error monitoring tasks:", error);
+    });
+  });
 });
